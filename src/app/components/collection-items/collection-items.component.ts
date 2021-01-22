@@ -8,6 +8,7 @@ import { Collection } from '../../models/Collection'
 })
 export class CollectionItemsComponent implements OnInit {
   @Input() collection: Collection;
+  
   constructor() { }
 
   ngOnInit() {

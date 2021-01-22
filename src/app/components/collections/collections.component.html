@@ -1,0 +1,13 @@
+<app-search-field (searchAlbum)="searchAlbum($event)"></app-search-field>
+
+<div *ngIf="emptySearch === true">
+    <p>Search albums of your favorite artist</p>
+</div>
+
+<div *ngIf="collections.length === 0 && emptySearch === false">
+    <p>Sorry... Couldn't find results</p>
+</div>
+
+<div *ngIf="collections.length > 0">
+    <app-collection-items *ngFor="let collection of collections" [collection]="collection"></app-collection-items>
+</div>
