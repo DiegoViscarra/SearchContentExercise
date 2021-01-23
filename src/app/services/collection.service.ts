@@ -9,7 +9,7 @@ export class CollectionService {
 
   constructor(private http:HttpClient) { }
 
-  searchAlbums(artistName:string):Observable<any> {
+  getAlbums(artistName:string):Observable<any> {
     let itunesSearchURL = `https://itunes.apple.com/search?term=${artistName}&entity=album`;
     return this.http.get(itunesSearchURL)
   }
