@@ -1,13 +1,13 @@
 <div class="card">
-    <div *ngIf="collection.artworkUrl100 != '' " class="zoom">
-        <img src={{collection.artworkUrl100}} alt="Artwork" width="100px" height="100px"> 
+    <div *ngIf="artworkUrl100 != '' " class="zoom">
+        <img src={{artworkUrl100}} alt="Artwork" width="100px" height="100px"> 
     </div>
-    <div *ngIf="collection.artworkUrl100 == ''" class="zoom">
+    <div *ngIf="artworkUrl100 == ''" class="zoom">
         <img src="https://km.support.apple.com/kb/image.jsp?productid=PP488&size=240x240" alt="Artwork" width="100px" height="100px"> 
     </div>
     <div class="center-items">
-        <h5><b>Album: {{collection.collectionName}}</b></h5>
-        <p>Artist: {{collection.artistName}}</p>
-        <p>Price: {{collection.collectionPrice}} $</p>
+        <h5><b>Album: {{collectionName}}</b></h5>
+        <p>Artist: {{artistName}}</p>
+        <p>Price: {{collectionPrice}} $</p>
     </div>
 </div>

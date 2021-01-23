@@ -22,4 +22,15 @@ describe('NoResultsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render the no result title message in a h4 tag', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h4').textContent).toContain('Sorry... We couldn´t find anything');
+  });
+
+  it('should render the no result content message in a p tag', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain('Make sure the words are spelled correctly');
+  });
+
 });

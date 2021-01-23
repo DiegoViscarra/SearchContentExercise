@@ -6,6 +6,8 @@ import { CollectionsComponent } from './collections.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CollectionItemsComponent } from '../collection-items/collection-items.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EmptySearchComponent } from '../layout/header/messages/empty-search/empty-search.component';
+import { NoResultsComponent } from '../layout/header/messages/no-results/no-results.component';
 
 describe('CollectionsComponent', () => {
   let component: CollectionsComponent;
@@ -17,7 +19,9 @@ describe('CollectionsComponent', () => {
         CollectionsComponent,
         SearchFieldComponent,
         OrderDataComponent,
-        CollectionItemsComponent
+        CollectionItemsComponent,
+        EmptySearchComponent,
+        NoResultsComponent
       ],
       imports: [ 
         FormsModule,
