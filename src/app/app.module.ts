@@ -11,6 +11,8 @@ import { CollectionItemsComponent } from './components/collection-items/collecti
 import { SearchFieldComponent } from './components/search-field/search-field.component';
 import { OrderDataComponent } from './components/order-data/order-data.component';
 import { HeaderComponent } from './components/layout/header/header.component';
+import { EmptySearchComponent } from './components/layout/header/messages/empty-search/empty-search.component';
+import { NoResultsComponent } from './components/layout/header/messages/no-results/no-results.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HeaderComponent } from './components/layout/header/header.component';
     CollectionItemsComponent,
     SearchFieldComponent,
     OrderDataComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmptySearchComponent,
+    NoResultsComponent
   ],
   imports: [
     BrowserModule,

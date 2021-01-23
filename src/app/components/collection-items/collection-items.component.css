@@ -1,16 +1,21 @@
 .card{
-    background: rgb(168,13,184);
-    background: linear-gradient(90deg, rgba(168,13,184,1) 2%, rgba(0,224,255,1) 50%, rgba(255,154,0,1) 99%);
-    color: white;
+    background: rgb(158,0,255);
+    background: linear-gradient(90deg, rgba(158,0,255,0.6615021008403361) 0%, rgba(0,245,255,0.6615021008403361) 50%, rgba(255,136,0,0.7371323529411764) 100%);
+    color: black;
     box-sizing: border-box;
-    width: 100%;
-    margin: 10px 0;
+    width: 70%;
+    margin: 15px 0 15px 50px;
 }
 .zoom {
-    transition: transform .2s; /* Animation */
+    transition: transform .2s;
     margin: 0 auto;
-  }
+    padding: 30px;
+}
   
-  .zoom:hover {
-    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+.zoom:hover {
+    transform: scale(1.5);
+}
+
+.center-items{
+  text-align: center;
+}

@@ -1,4 +1,6 @@
-<form class="form" (ngSubmit)="onSubmit()">
-    <input type="text" name="title" [(ngModel)]="title" placeholder="Search Artist´s Albums">
-    <input type="submit" value="Submit" class="btn">
-</form>
+<div class="container-fluid">
+    <form class="form" (ngSubmit)="onSubmit()">
+        <input type="text" name="title" [(ngModel)]="title" placeholder="Search Artist´s Albums">
+        <button type="submit" class="btn btn-dark" value="Submit">Submit</button>
+    </form>
+</div>

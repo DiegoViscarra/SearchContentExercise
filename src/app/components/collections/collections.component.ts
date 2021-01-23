@@ -32,7 +32,7 @@ export class CollectionsComponent implements OnInit {
     {
       this.emptySearch=false;
       this.albumService.getAlbums(title).subscribe(res => {
-        this.collections = res.results.filter(s => s.artistName.toLowerCase( ) === title.toLowerCase( ));
+        this.collections = res.results.filter(s => s.artistName.toLowerCase() == title.toLowerCase());
         this.orderData(this.optionForOrder);
       })
     }

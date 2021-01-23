@@ -3,11 +3,11 @@
         <app-search-field (searchAlbumTitle)="searchAlbum($event)"></app-search-field>
         <app-order-data  (optionToOrder)="orderData($event)"></app-order-data>
         <div *ngIf="emptySearch === true">
-            <p>Search albums of your favorite artist</p>
+            <app-empty-search></app-empty-search>
         </div>
 
         <div *ngIf="collections.length === 0 && emptySearch === false">
-            <p>Sorry... Couldn't find results</p>
+            <app-no-results></app-no-results>
         </div>
 
         <div *ngIf="collections.length > 0">
@@ -16,17 +16,21 @@
             </div>
             
             <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
-            <label>Items per page:
-                <select [(ngModel)]="itemsPerPag">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                </select>
-            </label>
-            <div>
-                <button (click)="showAllAlbums()">See All ></button>
-            </div>        
+            <div class="row page-selector">
+                <div class="col-xs-12 col-sm-2 col-lg-2 col-xl-2">
+                    <label>Items per page:
+                        <select [(ngModel)]="itemsPerPag">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-lg-2 col-xl-2">
+                    <button class="btn btn-primary" (click)="showAllAlbums()">See All ></button>
+                </div>  
+            </div>      
         </div>
     </div>
 </div>

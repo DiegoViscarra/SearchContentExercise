@@ -1,5 +1,6 @@
 html, body {
     margin:0px;
     font-family: 'Yusei Magic', sans-serif;
+    overflow-x: hidden;
 }
   
