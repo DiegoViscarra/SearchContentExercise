@@ -32,22 +32,27 @@ export class CollectionsComponent implements OnInit {
     {
       this.emptySearch=false;
       this.albumService.getAlbums(title).subscribe(res => {
-        this.collections = res.results.filter(s => s.artistName.toLowerCase() == title.toLowerCase());
+        this.filterData(res, title);
         this.orderData(this.optionForOrder);
-      })
+      });
+    }
+  }
+
+  filterData(resultSearch:any, artist:string){
+    if(artist!="" && artist!=null)
+    {
+      this.collections = resultSearch.results.filter(s => s.artistName.toLowerCase() == artist.toLowerCase());
     }
   }
 
   orderData(option: string){
     if(option==="Ascendant")
     {
-      console.log("ord asc");
       this.optionForOrder="Ascendant";
       this.collections.sort((a,b) => a.collectionName.localeCompare(b.collectionName));
     }
     else if(option==="Descendant")
     {
-      console.log("ord desc");
       this.optionForOrder="Descendant";
       this.collections.sort((b,a) => a.collectionName.localeCompare(b.collectionName));
     }
