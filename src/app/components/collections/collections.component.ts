@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchResult } from '../../models/SearchResult';
+import { Collection } from '../../models/Collection';
 import { CollectionService } from '../../services/collection.service'
+
 
 @Component({
   selector: 'app-collections',
@@ -8,9 +9,10 @@ import { CollectionService } from '../../services/collection.service'
   styleUrls: ['./collections.component.css']
 })
 export class CollectionsComponent implements OnInit {
-  collections: SearchResult[] = [];
+  collections: Collection[] = [];
   emptySearch: boolean;
-
+  actualPage: number = 1;
+  itemsPerPag: number = 5;
   constructor(private albumService:CollectionService) { }
 
   ngOnInit() {
@@ -27,11 +29,20 @@ export class CollectionsComponent implements OnInit {
     {
       this.emptySearch=false;
       this.albumService.searchAlbums(title).subscribe(res => {
-        this.collections = res.results.filter(s => s.artistName.toLowerCase( ) === title.toLowerCase( ));
+        this.collections = res.results.filter(s => s.artistName.toLowerCase( ) === title.toLowerCase( )).sort((a,b) => a.collectionName.localeCompare(b.collectionName));
       })
-      console.log(this.collections)
     }
+  }
 
+  orderData(option:string){
+    if(option==="Ascendant")
+    {
+      this.collections.sort((a,b) => a.collectionName.localeCompare(b.collectionName));
+    }
+    else if(option==="Descendant")
+    {
+      this.collections.sort((b,a) => a.collectionName.localeCompare(b.collectionName));
+    }
   }
 
 }

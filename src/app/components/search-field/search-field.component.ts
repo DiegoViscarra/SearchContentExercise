@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-field',
@@ -6,7 +6,7 @@ import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
   styleUrls: ['./search-field.component.css']
 })
 export class SearchFieldComponent implements OnInit {
-  @Output() searchAlbum: EventEmitter<string> = new EventEmitter();
+  @Output() searchAlbumTitle: EventEmitter<string> = new EventEmitter();
 
   title: string;
 
@@ -16,7 +16,7 @@ export class SearchFieldComponent implements OnInit {
   }
 
   onSubmit(){
-    this.searchAlbum.emit(this.title);
+    this.searchAlbumTitle.emit(this.title);
   }
 
 }

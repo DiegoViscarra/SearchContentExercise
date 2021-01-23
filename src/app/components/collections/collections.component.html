@@ -1,5 +1,5 @@
-<app-search-field (searchAlbum)="searchAlbum($event)"></app-search-field>
-
+<app-search-field (searchAlbumTitle)="searchAlbum($event)"></app-search-field>
+<app-order-data  (optionToOrder)="orderData($event)"></app-order-data>
 <div *ngIf="emptySearch === true">
     <p>Search albums of your favorite artist</p>
 </div>
@@ -9,5 +9,14 @@
 </div>
 
 <div *ngIf="collections.length > 0">
-    <app-collection-items *ngFor="let collection of collections" [collection]="collection"></app-collection-items>
+    <app-collection-items *ngFor="let collection of collections | paginate: { itemsPerPage: itemsPerPag, currentPage: actualPage }" [collection]="collection"></app-collection-items>
+    <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
+    <label>Items per page:
+        <select [(ngModel)]="itemsPerPag">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+      </label>
 </div>
