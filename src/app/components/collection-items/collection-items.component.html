@@ -1,5 +1,10 @@
 <div class="card">
-    <img src={{collection.artworkUrl100}} alt="Artwork"> 
+    <div *ngIf="collection.artworkUrl100 != '' ">
+        <img src={{collection.artworkUrl100}} alt="Artwork"> 
+    </div>
+    <div *ngIf="collection.artworkUrl100 == ''">
+        <img src="https://km.support.apple.com/kb/image.jsp?productid=PP488&size=240x240" alt="Artwork" width="100px" height="100px"> 
+    </div>
     <div>
         <h4><b>{{collection.collectionName}}</b></h4>
         <p>{{collection.artistName}}</p>
