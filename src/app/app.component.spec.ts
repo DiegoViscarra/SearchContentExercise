@@ -1,16 +1,30 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CollectionsComponent } from './components/collections/collections.component';
+import { OrderDataComponent } from './components/order-data/order-data.component';
+import { SearchFieldComponent } from './components/search-field/search-field.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { CollectionItemsComponent } from './components/collection-items/collection-items.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NgxPaginationModule,
+        FormsModule,
+        HttpClientModule
       ],
       declarations: [
-        AppComponent
-      ],
+        AppComponent,
+        CollectionsComponent,
+        SearchFieldComponent,
+        OrderDataComponent,
+        CollectionItemsComponent
+      ]
     }).compileComponents();
   }));
 

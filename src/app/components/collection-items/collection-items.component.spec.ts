@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { CollectionItemsComponent } from './collection-items.component';
 
 describe('CollectionItemsComponent', () => {
@@ -8,7 +8,8 @@ describe('CollectionItemsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CollectionItemsComponent ]
+      declarations: [ CollectionItemsComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));

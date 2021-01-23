@@ -1,3 +1,4 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit, Input } from '@angular/core';
 import { Collection } from '../../models/Collection'
 
@@ -8,7 +9,6 @@ import { Collection } from '../../models/Collection'
 })
 export class CollectionItemsComponent implements OnInit {
   @Input() collection: Collection;
-  
   constructor() { }
 
   ngOnInit() {

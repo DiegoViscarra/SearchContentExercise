@@ -1,0 +1,18 @@
+.header{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 22%, rgba(0,0,0,0.45702030812324934) 64%, rgba(0,0,0,0.196516106442577) 99%);
+    color:white;
+    height: 15%;
+    
+}
+.in-middle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+  }
+P.blocktext {
+    font-size: calc(1.525rem + 1.9vw);
+    
+}
