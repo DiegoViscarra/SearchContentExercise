@@ -1,4 +1,3 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit, Input } from '@angular/core';
 import { Collection } from '../../models/Collection'
 
@@ -13,13 +12,14 @@ export class CollectionItemsComponent implements OnInit {
   artistName: string;
   artworkUrl100: string;
   collectionName: string;
-  collectionPrice: Number;;
+  collectionPrice: Number;
+  defaultArtwork: string = "https://km.support.apple.com/kb/image.jsp?productid=PP488&size=240x240";
 
   constructor() { }
 
-  /*Initialize components for testing*/
   ngOnInit() {
     this.initializeComp()
+    this.artworkExists()
   }
 
   initializeComp(){
@@ -33,9 +33,21 @@ export class CollectionItemsComponent implements OnInit {
     else
     {
       this.artistName = this.collection.artistName;
-      this.artworkUrl100 = this.collection.artworkUrl100;
+      this.artworkExists();
       this.collectionName = this.collection.collectionName;
       this.collectionPrice = this.collection.collectionPrice;
     }
   }
+  
+  artworkExists(){
+    if(this.artworkUrl100=="")
+    {
+      this.artworkUrl100 = this.defaultArtwork;
+    }
+    else
+    {
+      this.artworkUrl100 = this.collection.artworkUrl100;
+    }
+  }
+
 }

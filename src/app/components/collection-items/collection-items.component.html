@@ -1,9 +1,6 @@
 <div class="card">
-    <div *ngIf="artworkUrl100 != '' " class="zoom">
+    <div class="zoom">
         <img src={{artworkUrl100}} alt="Artwork" width="100px" height="100px"> 
-    </div>
-    <div *ngIf="artworkUrl100 == ''" class="zoom">
-        <img src="https://km.support.apple.com/kb/image.jsp?productid=PP488&size=240x240" alt="Artwork" width="100px" height="100px"> 
     </div>
     <div class="center-items">
         <h5><b>Album: {{collectionName}}</b></h5>

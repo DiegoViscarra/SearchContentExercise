@@ -26,7 +26,8 @@ export class CollectionsComponent implements OnInit {
     this.itemsPerPag = 5;
     if(title==="")
     {
-      this.emptySearch=true;
+      this.emptySearch = true;
+      this.collections = [];
     }
     else
     {
