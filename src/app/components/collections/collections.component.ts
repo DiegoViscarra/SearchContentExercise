@@ -26,24 +26,37 @@ export class CollectionsComponent implements OnInit {
     this.itemsPerPag = 5;
     if(title==="")
     {
-      this.emptySearch = true;
-      this.collections = [];
+      this.showEmptySearchPage();
     }
     else
     {
-      this.emptySearch=false;
-      this.albumService.getAlbums(title).subscribe(res => {
-        this.filterData(res, title);
-        this.orderData(this.optionForOrder);
-      });
+      this.getAlbums(title);
     }
   }
 
-  filterData(resultSearch:any, artist:string){
+  showEmptySearchPage(){
+    this.emptySearch = true;
+    this.collections = [];
+  }
+
+  getAlbums(title: string){
+    this.emptySearch=false;
+    this.albumService.getAlbums(title).subscribe(res => {
+      this.convertResults(res, title);
+    });
+  }
+
+  convertResults(resultSearch:any, artist:string){
     if(artist!="" && artist!=null)
     {
-      this.collections = resultSearch.results.filter(s => s.artistName.toLowerCase() == artist.toLowerCase());
+      this.collections = resultSearch.results;
+      this.filterByArtist(artist);
+      this.orderData(this.optionForOrder);
     }
+  }
+
+  filterByArtist(artist:string):void{
+    this.collections = this.collections.filter(s => s.artistName.toLowerCase() == artist.toLowerCase());  
   }
 
   orderData(option: string){

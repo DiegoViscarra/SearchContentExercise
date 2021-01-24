@@ -18,8 +18,7 @@ export class CollectionItemsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initializeComp()
-    this.artworkExists()
+    this.initializeComp();
   }
 
   initializeComp(){
@@ -40,7 +39,7 @@ export class CollectionItemsComponent implements OnInit {
   }
   
   artworkExists(){
-    if(this.artworkUrl100=="")
+    if(this.collection.artworkUrl100 == "")
     {
       this.artworkUrl100 = this.defaultArtwork;
     }
