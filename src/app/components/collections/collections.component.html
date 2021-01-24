@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="container">
+        <app-search-field (searchAlbumTitle)="searchAlbum($event)"></app-search-field>
+        <app-order-data  (optionToOrder)="orderData($event)"></app-order-data>
+        <div *ngIf="emptySearch === true">
+            <app-empty-search></app-empty-search>
+        </div>
+
+        <div *ngIf="collections.length === 0 && emptySearch === false">
+            <app-no-results></app-no-results>
+        </div>
+
+        <div *ngIf="collections.length > 0">
+            <div class="row justify-content-center">
+                <app-collection-items *ngFor="let collection of collections | paginate: { itemsPerPage: itemsPerPag, currentPage: actualPage }" [collection]="collection" class="col-xs-12 col-sm-6 col-lg-4 col-xl-3"></app-collection-items>
+            </div>
+            
+            <pagination-controls (pageChange)="actualPage = $event"></pagination-controls>
+            <div class="row page-selector">
+                <div class="col-xs-12 col-sm-2 col-lg-2 col-xl-2">
+                    <label>Items per page:
+                        <select [(ngModel)]="itemsPerPag">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-lg-2 col-xl-2">
+                    <button class="btn btn-primary" (click)="showAllAlbums()">See All ></button>
+                </div>  
+            </div>      
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+.container-fluid{
+    margin-left: 38px;
+    margin-bottom: 15px;
+}
+
+form{
+    border: 1px solid black;
+    width: 130px;
+    padding: 5px;
+}

@@ -1,0 +1,31 @@
+.card{
+    background: #0097A7;
+    color: white;
+    box-sizing: border-box;
+    width: 70%;
+    margin: 15px 0 15px 50px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    padding: 0 5px;
+}
+
+.card:hover {
+    background: rgb(158,0,255);
+    background: linear-gradient(90deg, rgba(158,0,255,0.6615021008403361) 0%, rgba(0,245,255,0.6615021008403361) 50%, rgba(255,136,0,0.7371323529411764) 100%);
+    color: black;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.zoom {
+    transition: transform .2s;
+    margin: 0 auto;
+    padding: 30px;
+}
+  
+.zoom:hover {
+    transform: scale(1.5);
+}
+
+.center-items{
+  text-align: center;
+}

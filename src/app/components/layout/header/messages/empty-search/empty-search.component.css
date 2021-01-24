@@ -1,0 +1,18 @@
+.container-fluid{
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+}
+
+.in-middle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.container-text{
+    margin-left: 38px;
+}

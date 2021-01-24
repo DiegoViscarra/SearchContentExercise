@@ -1,16 +1,36 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CollectionsComponent } from './components/collections/collections.component';
+import { OrderDataComponent } from './components/order-data/order-data.component';
+import { SearchFieldComponent } from './components/search-field/search-field.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { CollectionItemsComponent } from './components/collection-items/collection-items.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { EmptySearchComponent } from './components/layout/header/messages/empty-search/empty-search.component';
+import { NoResultsComponent } from './components/layout/header/messages/no-results/no-results.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NgxPaginationModule,
+        FormsModule,
+        HttpClientModule
       ],
       declarations: [
-        AppComponent
-      ],
+        AppComponent,
+        CollectionsComponent,
+        SearchFieldComponent,
+        OrderDataComponent,
+        CollectionItemsComponent,
+        HeaderComponent,
+        EmptySearchComponent,
+        NoResultsComponent
+      ]
     }).compileComponents();
   }));
 
@@ -26,10 +46,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('search-content-exercise');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('search-content-exercise app is running!');
-  });
 });
